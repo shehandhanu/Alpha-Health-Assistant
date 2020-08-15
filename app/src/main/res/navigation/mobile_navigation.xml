@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_dashboard">
+
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.AlphaHealthAssistant.ui.dashboard.DashboardFragment"
+        android:label="@string/menu_dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+
+    <fragment
+        android:id="@+id/nav_bmi"
+        android:name="com.example.AlphaHealthAssistant.ui.bmi.BMIFragment"
+        android:label="@string/menu_bmi"
+        tools:layout="@layout/fragment_bmi" />
+
+    <fragment
+        android:id="@+id/nav_wreminder"
+        android:name="com.example.AlphaHealthAssistant.ui.wreminder.WreminderFragment"
+        android:label="@string/menu_wreminder"
+        tools:layout="@layout/fragment_wreminder" />
+
+    <fragment
+        android:id="@+id/nav_caloriecal"
+        android:name="com.example.AlphaHealthAssistant.ui.caloriecal.CaloriecalFragment"
+        android:label="@string/menu_caloriecal"
+        tools:layout="@layout/fragment_caloriecal" />
+
+    <fragment
+        android:id="@+id/nav_calorieburn"
+        android:name="com.example.AlphaHealthAssistant.ui.calorieburn.CalorieburnFragment"
+        android:label="@string/menu_calorieburn"
+        tools:layout="@layout/fragment_calorieburn" />
+
+</navigation>
