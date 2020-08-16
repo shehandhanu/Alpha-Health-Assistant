@@ -4,7 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/images">
+    android:background="@drawable/images"
+    >
 
 
     <com.google.android.material.tabs.TabLayout
@@ -17,23 +18,23 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabwreminder"
-            android:text="Reminder" />
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/tabwreminder"-->
+<!--            android:text="Reminder" />-->
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabwhistory"
-            android:text="History" />
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/tabwhistory"-->
+<!--            android:text="History" />-->
 
-        <com.google.android.material.tabs.TabItem
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/tabwsettings"
-            android:text="Settings" />
+<!--        <com.google.android.material.tabs.TabItem-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:id="@+id/tabwsettings"-->
+<!--            android:text="Settings" />-->
     </com.google.android.material.tabs.TabLayout>
 
     <androidx.viewpager.widget.ViewPager

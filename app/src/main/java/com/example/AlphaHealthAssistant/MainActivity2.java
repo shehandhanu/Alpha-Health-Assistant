@@ -51,32 +51,35 @@ public class MainActivity2 extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-        TabLayout tabWLayout = findViewById(R.id.tabwLayout);
-        TabItem tabWReminder = findViewById(R.id.tabwreminder);
-        TabItem tabWHistory = findViewById(R.id.tabwhistory);
-        TabItem tabWSettings = findViewById(R.id.tabwsettings);
-        final ViewPager wviewpager = findViewById(R.id.wviewpager);
 
-        WPagerAdapter pagerAdapter = new WPagerAdapter(getSupportFragmentManager(), tabWLayout.getTabCount());
+        // Tab Layout Water Reminder
 
-        wviewpager.setAdapter(pagerAdapter);
-
-        tabWLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-            @Override
-            public void onTabSelected(TabLayout.Tab tab) {
-                wviewpager.setCurrentItem(tab.getPosition());
-            }
-
-            @Override
-            public void onTabUnselected(TabLayout.Tab tab) {
-
-            }
-
-            @Override
-            public void onTabReselected(TabLayout.Tab tab) {
-
-            }
-        });
+//        TabLayout tabWLayout = findViewById(R.id.tabwLayout);
+//        TabItem tabWReminder = findViewById(R.id.tabwreminder);
+//        TabItem tabWHistory = findViewById(R.id.tabwhistory);
+//        TabItem tabWSettings = findViewById(R.id.tabwsettings);
+//        final ViewPager wviewpager = findViewById(R.id.wviewpager);
+//
+//        WPagerAdapter pagerAdapter = new WPagerAdapter(getSupportFragmentManager(), tabWLayout.getTabCount());
+//
+//        wviewpager.setAdapter(pagerAdapter);
+//
+//        tabWLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+//            @Override
+//            public void onTabSelected(TabLayout.Tab tab) {
+//                wviewpager.setCurrentItem(tab.getPosition());
+//            }
+//
+//            @Override
+//            public void onTabUnselected(TabLayout.Tab tab) {
+//
+//            }
+//
+//            @Override
+//            public void onTabReselected(TabLayout.Tab tab) {
+//
+//            }
+//        });
 
     }
 
