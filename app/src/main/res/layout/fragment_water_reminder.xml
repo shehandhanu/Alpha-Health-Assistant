@@ -19,8 +19,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="44dp"
         android:layout_marginLeft="44dp"
-        android:layout_marginTop="31dp"
-        android:background="@drawable/bluebox" />
+        android:layout_marginTop="31dp" />
 
     <TextView
         android:id="@+id/textView4"
