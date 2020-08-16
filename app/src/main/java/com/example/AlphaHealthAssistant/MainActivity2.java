@@ -31,14 +31,6 @@ public class MainActivity2 extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
         // Passing each menu ID as a set of Ids because each
@@ -51,35 +43,6 @@ public class MainActivity2 extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, mAppBarConfiguration);
         NavigationUI.setupWithNavController(navigationView, navController);
 
-
-        // Tab Layout Water Reminder
-
-//        TabLayout tabWLayout = findViewById(R.id.tabwLayout);
-//        TabItem tabWReminder = findViewById(R.id.tabwreminder);
-//        TabItem tabWHistory = findViewById(R.id.tabwhistory);
-//        TabItem tabWSettings = findViewById(R.id.tabwsettings);
-//        final ViewPager wviewpager = findViewById(R.id.wviewpager);
-//
-//        WPagerAdapter pagerAdapter = new WPagerAdapter(getSupportFragmentManager(), tabWLayout.getTabCount());
-//
-//        wviewpager.setAdapter(pagerAdapter);
-//
-//        tabWLayout.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
-//            @Override
-//            public void onTabSelected(TabLayout.Tab tab) {
-//                wviewpager.setCurrentItem(tab.getPosition());
-//            }
-//
-//            @Override
-//            public void onTabUnselected(TabLayout.Tab tab) {
-//
-//            }
-//
-//            @Override
-//            public void onTabReselected(TabLayout.Tab tab) {
-//
-//            }
-//        });
 
     }
 
