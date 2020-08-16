@@ -13,6 +13,9 @@
     <string name="menu_wreminder">Water Reminder</string>
     <string name="menu_caloriecal">Food Calorie Calculater</string>
     <string name="menu_calorieburn">Calorie Burner</string>
+
+    <string name="wtab_reminder">Calorie Burner</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>

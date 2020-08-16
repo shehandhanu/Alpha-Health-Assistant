@@ -77,10 +77,10 @@ class WreminderList extends FragmentStatePagerAdapter {
             fragment = new WaterReminderFragment();
         }
         if (position == 1) {
-            fragment = new WaterReminderFragment();
+            fragment = new WaterHistoryFragment();
         }
         if (position == 2) {
-            fragment = new WaterReminderFragment();
+            fragment = new WaterSettingsFragment();
         }
 
         return fragment;
