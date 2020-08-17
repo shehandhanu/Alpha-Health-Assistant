@@ -24,9 +24,9 @@ public class bmiFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_bmi,null);
         final TabLayout tabLayout1 = (TabLayout) view.findViewById(R.id.tabBMILayout);
-        tabLayout1.addTab(tabLayout1.newTab().setText("Reminder"));
+        tabLayout1.addTab(tabLayout1.newTab().setText("Calculator"));
         tabLayout1.addTab(tabLayout1.newTab().setText("History"));
-        tabLayout1.addTab(tabLayout1.newTab().setText("Settings"));
+        tabLayout1.addTab(tabLayout1.newTab().setText("Healthy Tips"));
 
         tabLayout1.setTabGravity(TabLayout.GRAVITY_CENTER);
         tabLayout1.setTabGravity(TabLayout.GRAVITY_FILL);

@@ -1,14 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
+<android.widget.RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.bmi.BMITipsFragment">
+    android:background="@drawable/tip6"
+    android:gravity="center"
+    android:orientation="vertical">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/textView25"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="426dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="127dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/overWeightTip2"
+        android:textColor="#070707"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="372dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="181dp"
+        android:fontFamily="sans-serif-condensed"
+        android:text="@string/overWeightTip"
+        android:textColor="#070707"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="532dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="21dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/overWeightTip4"
+        android:textColor="#070707"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="289dp"
+        android:layout_height="53dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="1dp"
+        android:layout_marginTop="2dp"
+        android:layout_marginEnd="121dp"
+        android:layout_marginBottom="548dp"
+        android:fontFamily="casual"
+        android:text="@string/tab_text_3"
+        android:textColor="#090909"
+        android:textSize="36sp"
+        android:textStyle="bold" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="399dp"
+        android:layout_height="248dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="6dp"
+        android:layout_marginTop="65dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="290dp"
+        app:srcCompat="@drawable/bmi234" />
+
+    <TextView
+        android:id="@+id/textView18"
+        android:layout_width="361dp"
+        android:layout_height="37dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="326dp"
+        android:layout_marginEnd="6dp"
+        android:layout_marginBottom="240dp"
+        android:fontFamily="serif-monospace"
+        android:text="@string/overWeightTips"
+        android:textColor="#040404"
+        android:textSize="23sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView22"
+        android:layout_width="302dp"
+        android:layout_height="50dp"
+        android:layout_alignParentStart="false"
+        android:layout_alignParentTop="false"
+        android:layout_alignParentEnd="false"
+        android:layout_alignParentBottom="false"
+        android:layout_marginStart="68dp"
+        android:layout_marginTop="481dp"
+        android:layout_marginEnd="41dp"
+        android:layout_marginBottom="72dp"
+        android:fontFamily="sans-serif-condensed-medium"
+        android:text="@string/overWeightTip3"
+        android:textColor="#070707"
+        android:textSize="18sp"
+        android:textStyle="bold" />
+
+</android.widget.RelativeLayout>
