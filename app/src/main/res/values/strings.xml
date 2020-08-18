@@ -31,4 +31,15 @@
     <string name="overWeightTip2">2.Exercise, even moderately, for at least 30 minutes a day.</string>
     <string name="overWeightTip3">3.Cut down your consumption of fatty and sugary foods.</string>
     <string name="overWeightTip4">4.Use vegetable-based oils rather than animal-based fats.</string>
+
+
+    <string name="new_app_name">Training Plan</string>
+    <string name="beginner_exercise_window">ABS workouts</string>
+    <string name="training_plan_text_view">Training Plan</string>
+    <string name="report_window">Report</string>
+    <string name="history_window">History</string>
+    <string name="textView10">BEGINNER</string>
+    <string name="exerciseListTextView">Exercise List</string>
+    <string name="finalView">GREAT Job</string>
+    <string name="selectDay_TextView">Select a Day</string>
 </resources>
