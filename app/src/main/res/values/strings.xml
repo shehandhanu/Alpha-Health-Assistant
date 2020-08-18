@@ -31,4 +31,18 @@
     <string name="overWeightTip2">2.Exercise, even moderately, for at least 30 minutes a day.</string>
     <string name="overWeightTip3">3.Cut down your consumption of fatty and sugary foods.</string>
     <string name="overWeightTip4">4.Use vegetable-based oils rather than animal-based fats.</string>
+
+
+    <string name="app_name">Alpha Health Assistant</string>
+    <string name="second_ui">Breakfast</string>
+    <string name="DailyMeals">Daily Meals</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="Dinner">Dinner</string>
+    <string name="Report">Daily Report</string>
+    <string name="date">Pick a Date</string>
+    <string name="Selectmeal">Select Your Meal</string>
+    <string name="Selectdate">Select Date</string>
+    <string name="history">History</string>
+    <string name="food">Food Name</string>
 </resources>
