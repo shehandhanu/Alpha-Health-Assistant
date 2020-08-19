@@ -14,15 +14,12 @@ import com.example.AlphaHealthAssistant.R;
 
 public class CaloriecalFragment extends Fragment {
 
-    TextView text;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_caloriecal, container, false);
-        text = root.findViewById(R.id.text_caloriecal);
 
-        text.setText("BMI");
 
         return root;
     }

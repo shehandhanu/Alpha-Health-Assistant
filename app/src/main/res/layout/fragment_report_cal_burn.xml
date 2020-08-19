@@ -49,10 +49,10 @@
         app:layout_constraintVertical_bias="0.313" />
 
     <TextView
-        android:id="@+id/textView28"
+        android:id="@+id/firstTV_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Number of Workouts"
+        android:text="@string/Noofworkouts"
         android:textColor="#070707"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -63,10 +63,10 @@
         app:layout_constraintVertical_bias="0.204" />
 
     <TextView
-        android:id="@+id/textView29"
+        android:id="@+id/secondTV_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Total Kcal"
+        android:text="@string/totKcal"
         android:textColor="#070707"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -77,10 +77,10 @@
         app:layout_constraintVertical_bias="0.387" />
 
     <TextView
-        android:id="@+id/textView30"
+        android:id="@+id/thirdTV_report"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weight"
+        android:text="@string/weight"
         android:textColor="#070707"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -95,7 +95,7 @@
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="#1388EF"
-        android:text="OKAY"
+        android:text="@string/ok"
         android:textColor="#FBF8F8"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

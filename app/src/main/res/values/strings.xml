@@ -42,4 +42,19 @@
     <string name="exerciseListTextView">Exercise List</string>
     <string name="finalView">GREAT Job</string>
     <string name="selectDay_TextView">Select a Day</string>
+    <string name="previousworkoutTv">Previous workout</string>
+    <string name="todayworkouts">Today Workouts</string>
+    <string name="todaykcal">Today kcal</string>
+    <string name="weight">Weight</string>
+    <string name="Noofworkouts">Number Of Workouts</string>
+    <string name="totKcal">Total Kcal</string>
+    <string name="ok">OKAY</string>
+    <string name="noOfexcercises">Number of Exercises</string>
+
+    <string name="DailyMeals">Daily Meals</string>
+    <string name="breakfast">Breakfast</string>
+    <string name="lunch">Lunch</string>
+    <string name="Dinner">Dinner</string>
+    <string name="food">Food Name</string>
+    <string name="Selectmeal">Select Meals</string>
 </resources>

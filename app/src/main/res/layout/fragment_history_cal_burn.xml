@@ -43,13 +43,13 @@
         app:layout_constraintHorizontal_bias="0.141"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.713" />
+        app:layout_constraintVertical_bias="0.723" />
 
     <TextView
-        android:id="@+id/textView32"
+        android:id="@+id/previousWorkoutTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Previous Workouts"
+        android:text="@string/previousworkoutTv"
         android:textColor="#040303"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -71,7 +71,7 @@
         app:layout_constraintHorizontal_bias="0.08"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.657" />
+        app:layout_constraintVertical_bias="0.668" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine17"
@@ -88,10 +88,10 @@
         app:layout_constraintVertical_bias="0.82" />
 
     <TextView
-        android:id="@+id/textView33"
+        android:id="@+id/todayWorkoutsTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Today Workouts"
+        android:text="@string/todayworkouts"
         android:textColor="#040303"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -102,17 +102,17 @@
         app:layout_constraintVertical_bias="0.58" />
 
     <TextView
-        android:id="@+id/textView36"
+        android:id="@+id/weightTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Weight"
+        android:text="@string/weight"
         android:textColor="#040303"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86" />
+        app:layout_constraintVertical_bias="0.867" />
 
     <EditText
         android:id="@+id/editTextTextMultiLine16"
@@ -143,10 +143,10 @@
         app:layout_constraintVertical_bias="0.519" />
 
     <TextView
-        android:id="@+id/textView35"
+        android:id="@+id/todayKcalTV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Today Kcal"
+        android:text="@string/todaykcal"
         android:textColor="#040303"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
