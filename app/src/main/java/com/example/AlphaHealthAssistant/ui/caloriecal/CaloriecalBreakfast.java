@@ -1,72 +1,148 @@
 package com.example.AlphaHealthAssistant.ui.caloriecal;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
+import android.widget.EditText;
 
 import com.example.AlphaHealthAssistant.R;
+import com.example.AlphaHealthAssistant.ui.caloriecal.database.Meal;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link CaloriecalBreakfast#newInstance} factory method to
- * create an instance of this fragment.
- */
-public class CaloriecalBreakfast extends Fragment {
+public class CaloriecalBreakfast extends AppCompatActivity {
     int minteger = 0;
     int minteger1 = 0;
     int minteger2 = 0;
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
+    int minteger3 = 0;
+    int minteger4 = 0;
 
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
+    Button save;
 
-    public CaloriecalBreakfast() {
-        // Required empty public constructor
+    int number01, num, number02, newNumber02, num_second, number03, num_third, number04,num_fourth;
+    int number05, num_fifth;
+
+    EditText txtmilkCofeeCount, txtOrangejuiceCount, txtAvocadojuiceCount, txtHoppersCount, txtStringHoppersCount;
+
+    DatabaseReference dbRef;
+    Meal meal;
+
+    private void clearControls(){
+        txtmilkCofeeCount.setText("");
+        txtOrangejuiceCount.setText("");
+        txtAvocadojuiceCount.setText("");
+        txtHoppersCount.setText("");
+        txtStringHoppersCount.setText("");
     }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment CaloriecalBreakfast.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static CaloriecalBreakfast newInstance(String param1, String param2) {
-        CaloriecalBreakfast fragment = new CaloriecalBreakfast();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
-
     @Override
-    public void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+        setContentView(R.layout.activity_caloriecal_breakfast);
+        addNumber();
+
+        final EditText OrangeJuice = findViewById(R.id.OrangeJuice);
+        final Button buttonAddOrange = findViewById(R.id.addOrangeJuice);
+        final TextView tv_final = findViewById(R.id.CalorieTot);
+        buttonAddOrange.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number02 = Integer.parseInt(OrangeJuice.getText().toString());
+                newNumber02 = Integer.parseInt(tv_final.getText().toString());
+                num_second = (number02 * 45) + newNumber02;
+                tv_final.setText(String.valueOf(num_second));
+            }
+        });
+
+        final EditText AvacadoJuice = findViewById(R.id.avocadoJuice);
+        final Button buttonAddAvacado = findViewById(R.id.addAvacadoJuice);
+
+        buttonAddAvacado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number03 = Integer.parseInt(AvacadoJuice.getText().toString());
+                newNumber02 = Integer.parseInt(tv_final.getText().toString());
+                num_third = (number03 * 160) + newNumber02;
+                tv_final.setText(String.valueOf(num_third));
+            }
+        });
+
+        final EditText Hoppers = findViewById(R.id.hoppers);
+        final Button buttonAddhoppers = findViewById(R.id.addHoppers);
+
+        buttonAddhoppers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number04 = Integer.parseInt(Hoppers.getText().toString());
+                newNumber02 = Integer.parseInt(tv_final.getText().toString());
+                num_fourth = (number03 * 160) + newNumber02;
+                tv_final.setText(String.valueOf(num_fourth));
+            }
+        });
+        final EditText StringHoppers = findViewById(R.id.stringHoppers);
+        final Button buttonAddStringhoppers = findViewById(R.id.addStringHoppers);
+
+        buttonAddStringhoppers.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number05 = Integer.parseInt(StringHoppers.getText().toString());
+                newNumber02 = Integer.parseInt(tv_final.getText().toString());
+                num_fifth = (number05 * 160) + newNumber02;
+                tv_final.setText(String.valueOf(num_fifth));
+            }
+        });
+
+        txtmilkCofeeCount = findViewById(R.id.milkcofeee);
+        txtOrangejuiceCount = findViewById(R.id.OrangeJuice);
+        txtAvocadojuiceCount = findViewById(R.id.avocadoJuice);
+        txtStringHoppersCount = findViewById(R.id.stringHoppers);
+        txtHoppersCount = findViewById(R.id.hoppers);
+
+        save = findViewById(R.id.btnSave);
+
+        meal = new Meal();
+        save.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dbRef = FirebaseDatabase.getInstance().getReference().child("breakfast");
+                try{
+                    meal.setCountmilkcofee(Integer.parseInt(txtmilkCofeeCount.getText().toString().trim()));
+                    meal.setCountorangeJuice(Integer.parseInt(txtOrangejuiceCount.getText().toString().trim()));
+                    meal.setCountavocadoJuice(Integer.parseInt(txtAvocadojuiceCount.getText().toString().trim()));
+                    meal.setCounthoppers(Integer.parseInt(txtHoppersCount.getText().toString().trim()));
+                    meal.setCountStringHoppers(Integer.parseInt(txtStringHoppersCount.getText().toString().trim()));
+
+                    dbRef.push().setValue(meal);
+
+                    Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
+                    clearControls();
+                } catch (Exception e) {
+                    e.printStackTrace();
+                }
+
+            }
+        });
+
 
     }
+    public void addNumber(){
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_caloriecal_breakfast, container, false);
+        final EditText milccofee = findViewById(R.id.milkcofeee);
+        final Button buttonAddMilkCoffe = findViewById(R.id.AddMilkCofeeBtn);
+        final TextView tv_final = findViewById(R.id.CalorieTot);
+        buttonAddMilkCoffe.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                number01 = Integer.parseInt(milccofee.getText().toString());
+                num = number01 * 150;
+                tv_final.setText(String.valueOf(num));
+            }
+        });
     }
+
 
     public void increaseInteger(View view) {
         minteger = minteger + 1;
@@ -85,6 +161,14 @@ public class CaloriecalBreakfast extends Fragment {
         displayThird(minteger2);
 
     }
+    public void increaseIntegerFourth(View view){
+        minteger3= minteger3 + 1;
+        displayFourth(minteger3);
+    }
+    public void increaseIntegerFifth(View view){
+        minteger4= minteger4 + 1;
+        displayFifth(minteger4);
+    }
 
     public void decreaseInteger(View view) {
         minteger = minteger - 1;
@@ -100,22 +184,1395 @@ public class CaloriecalBreakfast extends Fragment {
         minteger2 = minteger2 - 1;
         displayThird(minteger2);
     }
+    public void decreaseIntegerFourth(View view){
+        minteger3 = minteger3 -1;
+        displayFourth(minteger3);
+    }
+    public void decreaseIntegerFifth(View view){
+        minteger4 = minteger4 -1;
+        displayFifth(minteger4);
+    }
 
     private void display(int number) {
-        TextView displayInteger = getView().findViewById(
-                R.id.textView7);
+        EditText displayInteger = (EditText) findViewById(
+                R.id.milkcofeee);
         displayInteger.setText("" + number);
     }
 
     private void displaySecond(int number) {
-        TextView displayInteger = getView().findViewById(
-                R.id.textView8);
+        TextView displayInteger = (TextView) findViewById(
+                R.id.OrangeJuice);
         displayInteger.setText("" + number);
     }
 
     private void displayThird(int number) {
-        TextView displayInteger = getView().findViewById(
-                R.id.textView10);
+        TextView displayInteger = (TextView) findViewById(
+                R.id.avocadoJuice);
         displayInteger.setText("" + number);
     }
+    private void displayFourth(int number){
+        TextView displayInteger = (TextView) findViewById(R.id.hoppers);
+        displayInteger.setText(""+number);
+    }
+    private void displayFifth(int number){
+        TextView displayInteger = (TextView) findViewById(R.id.stringHoppers);
+        displayInteger.setText(""+number);
+    }
+
+
+
+    public int calMilkCofeeCalorie(int mcount) {
+        if (mcount == 0)
+            return 0;
+        else
+            return mcount * 150;
+    }
+
+
+
+    public int calOrangeJuiceCalorie(int ocount) {
+        if (ocount == 0)
+            return 0;
+        else
+            return ocount * 45;
+    }
+
+    public int calAvocadoJuiceCalorie(int acount) {
+        if (acount == 0)
+            return 0;
+        else
+            return acount * 160;
+    }
+    public int getTotal(int mcount, int ocount, int acount){
+        return calOrangeJuiceCalorie(ocount)+calMilkCofeeCalorie(mcount)+calAvocadoJuiceCalorie(acount);
+    }
+
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

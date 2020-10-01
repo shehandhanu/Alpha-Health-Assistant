@@ -57,4 +57,22 @@
     <string name="Dinner">Dinner</string>
     <string name="food">Food Name</string>
     <string name="Selectmeal">Select Meals</string>
+    <string name="title_activity_date_picker">DatePicker</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_caloriecal_date_pick">CaloriecalDatePick</string>
+    <string name="title_activity_caloriecal_history">CaloriecalHistory</string>
+    <string name="title_activity_caloriecal_daily_report">CaloriecalDailyReport</string>
+    <string name="title_activity_caloriecal_daily_meal">CaloriecalDailyMeal</string>
+    <string name="title_activity_caloriecal_first_breakfast">CaloriecalFirstBreakfast</string>
+    <string name="hoppers">Hoppers</string>
+    <string name="stringhoppers">String Hoppers</string>
+    <string name="redrice">Red Rice</string>
+    <string name="add">add</string>
 </resources>

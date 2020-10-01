@@ -9,6 +9,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.caloriecal.CalorieCalLunch"
+            android:label="Lunch"></activity>
+
+        <activity
+            android:name=".ui.caloriecal.CaloriecalDailyMeal"
+            android:label="@string/title_activity_caloriecal_daily_meal"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.caloriecal.CaloriecalBreakfast"
+            android:label="Breakfast" />
+        <activity
+            android:name=".ui.caloriecal.CaloriecalDailyReport"
+            android:label="@string/title_activity_caloriecal_daily_report"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ui.caloriecal.CaloriecalHistory"
+            android:label="@string/title_activity_caloriecal_history"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".AlphaHealthAssistant">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
