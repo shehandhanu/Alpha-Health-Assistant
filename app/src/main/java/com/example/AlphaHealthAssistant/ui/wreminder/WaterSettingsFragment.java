@@ -2,65 +2,94 @@ package com.example.AlphaHealthAssistant.ui.wreminder;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.AlphaHealthAssistant.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
-/**
- * A simple {@link Fragment} subclass.
- * Use the {@link WaterSettingsFragment#newInstance} factory method to
- * create an instance of this fragment.
- */
+import java.awt.font.TextAttribute;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.HashMap;
+
 public class WaterSettingsFragment extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-    private static final String ARG_PARAM1 = "param1";
-    private static final String ARG_PARAM2 = "param2";
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
-
-    public WaterSettingsFragment() {
-        // Required empty public constructor
-    }
-
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment WaterSettingsFragment.
-     */
-    // TODO: Rename and change types and number of parameters
-    public static WaterSettingsFragment newInstance(String param1, String param2) {
-        WaterSettingsFragment fragment = new WaterSettingsFragment();
-        Bundle args = new Bundle();
-        args.putString(ARG_PARAM1, param1);
-        args.putString(ARG_PARAM2, param2);
-        fragment.setArguments(args);
-        return fragment;
-    }
+    TextView CurrentLimit;
+    EditText AddLimit;
+    Button AddLimitBtn;
+    DatabaseReference myRef;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
-        }
+
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_water_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_water_settings, container, false);
+
+        CurrentLimit = (TextView) view.findViewById(R.id.dailyLimitView);
+        AddLimit = (EditText) view.findViewById(R.id.addDailyLimit);
+        AddLimitBtn = (Button) view.findViewById(R.id.addDailyLimitBtn);
+
+        myRef = FirebaseDatabase.getInstance().getReference().child("Added Water");
+
+        myRef.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                String value = snapshot.child("Daily Limit").getValue().toString();
+                Toast.makeText(getContext(), "Updateing Current Limit", Toast.LENGTH_SHORT).show();
+                CurrentLimit.setText(value + " ml");
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+
+        AddLimitBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                int waterLimit = Integer.parseInt(AddLimit.getText().toString());
+
+                myRef.child("Daily Limit").setValue(waterLimit);
+                Toast.makeText(getContext(), "Database Updated", Toast.LENGTH_SHORT).show();
+                myRef.addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        String value = snapshot.child("Daily Limit").getValue().toString();
+                        Toast.makeText(getContext(), "Updateing Current Limit", Toast.LENGTH_SHORT).show();
+                        CurrentLimit.setText(value + " ml");
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
+
+
+
+
+        return view;
     }
 }

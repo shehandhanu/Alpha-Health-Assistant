@@ -53,41 +53,41 @@ public class WreminderFragment extends Fragment {
             }
         });
 
-
         return view;
     }
 
+    private class WreminderList extends FragmentStatePagerAdapter {
+
+        int noOfTabs;
+
+        public WreminderList(FragmentManager fm, int NumberOfTabs) {
+            super(fm);
+            this.noOfTabs = NumberOfTabs;
+        }
+
+
+        @Override
+        public Fragment getItem(int position) {
+            Fragment fragment = null;
+
+
+            if (position == 0) {
+                fragment = new WaterReminderFragment();
+            }
+            if (position == 1) {
+                fragment = new WaterHistoryFragment();
+            }
+            if (position == 2) {
+                fragment = new WaterSettingsFragment();
+            }
+
+            return fragment;
+        }
+
+        @Override
+        public int getCount() {
+            return 3;
+        }
+    }
 }
-class WreminderList extends FragmentStatePagerAdapter {
 
-    int noOfTabs;
-
-    public WreminderList(FragmentManager fm, int NumberOfTabs) {
-        super(fm);
-        this.noOfTabs = NumberOfTabs;
-    }
-
-
-    @Override
-    public Fragment getItem(int position) {
-        Fragment fragment = null;
-
-
-        if (position == 0) {
-            fragment = new WaterReminderFragment();
-        }
-        if (position == 1) {
-            fragment = new WaterHistoryFragment();
-        }
-        if (position == 2) {
-            fragment = new WaterSettingsFragment();
-        }
-
-        return fragment;
-    }
-
-    @Override
-    public int getCount() {
-        return 3;
-    }
-}

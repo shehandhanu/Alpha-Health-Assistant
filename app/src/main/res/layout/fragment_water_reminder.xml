@@ -9,32 +9,20 @@
     <!-- TODO: Update blank fragment layout -->
 
 
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="321dp"
-        android:layout_height="218dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="44dp"
-        android:layout_marginLeft="44dp"
-        android:layout_marginTop="31dp" />
-
     <TextView
         android:id="@+id/textView4"
-        android:layout_width="343dp"
-        android:layout_height="50dp"
+        android:layout_width="352dp"
+        android:layout_height="73dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp"
-        android:layout_marginBottom="474dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="515dp"
         android:text="Today Summery"
         android:textAlignment="center"
         android:textAllCaps="false"
         android:textColor="#F10000"
-        android:textSize="35sp"
+        android:textSize="45sp"
         android:textStyle="bold" />
 
     <TextView
@@ -51,103 +39,130 @@
         android:layout_centerHorizontal="true"
         android:layout_marginStart="43dp"
         android:layout_marginLeft="43dp"
-        android:layout_marginTop="394dp"
+        android:layout_marginTop="402dp"
         android:layout_marginEnd="46dp"
         android:layout_marginRight="46dp"
-        android:layout_marginBottom="169dp"
+        android:layout_marginBottom="161dp"
         android:text="How Much You Drink Water?"
         android:textAlignment="center"
         android:textSize="24sp" />
 
     <TextView
-        android:id="@+id/textView5"
-        android:layout_width="324dp"
-        android:layout_height="56dp"
+        android:id="@+id/showWSum"
+        android:layout_width="109dp"
+        android:layout_height="41dp"
+        android:layout_alignParentStart="true"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="148dp"
-        android:layout_marginBottom="399dp"
+        android:layout_marginStart="106dp"
+        android:layout_marginTop="197dp"
+        android:layout_marginBottom="365dp"
         android:fontFamily="sans-serif-black"
-        android:text="500ml/2500ml"
-        android:textAlignment="center"
-        android:textSize="36sp" />
+        android:text=""
+        android:textAlignment="textEnd"
+        android:textSize="30sp" />
+
+    <TextView
+        android:id="@+id/CurrentLimt"
+        android:layout_width="wrap_content"
+        android:layout_height="44dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="196dp"
+        android:layout_marginEnd="94dp"
+        android:layout_marginRight="94dp"
+        android:layout_marginBottom="364dp"
+        android:fontFamily="sans-serif-black"
+        android:gravity="start"
+        android:text=""
+        android:textAlignment="textStart"
+        android:textSize="30sp" />
 
     <Button
         android:id="@+id/wadd"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="176dp"
+        android:layout_height="47dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="495dp"
+        android:layout_marginTop="496dp"
         android:layout_marginBottom="60dp"
-        android:text="Button" />
+        android:text="Add Water" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/waterAmount"
         android:layout_width="193dp"
         android:layout_height="50dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="433dp"
-        android:layout_marginBottom="120dp"
+        android:layout_marginTop="445dp"
+        android:layout_marginBottom="108dp"
         android:ems="10"
         android:inputType="number"
         android:textAlignment="center"
         android:textColor="#777474"
         tools:text="Type Amount" />
 
-    <TextView
-        android:id="@+id/textView7"
-        android:layout_width="340dp"
-        android:layout_height="42dp"
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_width="349dp"
+        android:layout_height="359dp"
         android:layout_alignParentTop="true"
-        android:layout_alignParentBottom="true"
-        android:layout_centerInParent="true"
-        android:layout_marginTop="279dp"
-        android:layout_marginBottom="282dp"
-        android:text="Last Recorded Water Drinked Time"
-        android:textAlignment="center"
-        android:textAllCaps="false"
-        android:textSize="18sp" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="37dp"
+        android:indeterminateOnly="false"
+        android:progressDrawable="@drawable/cricle"
+        android:rotation="+180"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:progress="50" />
 
     <TextView
-        android:id="@+id/textView9"
-        android:layout_width="74dp"
-        android:layout_height="31dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="131dp"
-        android:layout_marginLeft="131dp"
-        android:layout_marginEnd="205dp"
-        android:layout_marginRight="205dp"
-        android:layout_marginBottom="240dp"
-        android:text="00:00"
-        android:textAlignment="center"
-        android:textSize="18sp" />
+        android:id="@+id/progress_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="189dp"
+        android:textAppearance="@style/TextAppearance.AppCompat"
+        app:layout_constraintBottom_toBottomOf="@+id/progress_bar"
+        app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+        app:layout_constraintStart_toStartOf="@+id/progress_bar"
+        app:layout_constraintTop_toTopOf="@+id/progress_bar"
+        tools:text="50%" />
 
-    <TextView
-        android:id="@+id/textView10"
-        android:layout_width="74dp"
-        android:layout_height="31dp"
+    <Button
+        android:id="@+id/progress_plus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_alignParentStart="true"
         android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="66dp"
+        android:layout_marginLeft="66dp"
+        android:layout_marginTop="353dp"
+        android:text="+10%"
+        app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
+
+    <Button
+        android:id="@+id/progress_neg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="214dp"
-        android:layout_marginLeft="214dp"
-        android:layout_marginEnd="122dp"
-        android:layout_marginRight="122dp"
-        android:layout_marginBottom="240dp"
-        android:text="200ml"
-        android:textAlignment="center"
-        android:textSize="18sp" />
+        android:layout_marginTop="348dp"
+        android:layout_marginEnd="67dp"
+        android:layout_marginRight="67dp"
+        android:text="-10%"
+        app:layout_constraintStart_toStartOf="@+id/progress_bar"
+        app:layout_constraintTop_toBottomOf="@+id/progress_bar" />
 
 
 </RelativeLayout>

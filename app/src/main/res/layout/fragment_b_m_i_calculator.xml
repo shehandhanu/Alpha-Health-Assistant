@@ -177,7 +177,7 @@
         android:textStyle="bold" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/showWSum"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="false"
@@ -194,7 +194,7 @@
         android:textSize="21sp" />
 
     <EditText
-        android:id="@+id/editTextNumber"
+        android:id="@+id/waterAmount"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="false"
