@@ -19,60 +19,21 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="tab_text_1">Calculator</string>
-    <string name="tab_text_2">History</string>
-    <string name="tab_text_3">Healthy Tips</string>
-    <string name="bmiCal">BMI Calculator</string>
+    <string name="his">HISTORY</string>
+    <string name="tab_text_3">HEALTHY TIPS</string>
+    <string name="bmiCal">    BMI CALCULATOR</string>
     <string name="cal">Calculate</string>
-    <string name="Date">Date</string>
+    <string name="Date">DATE</string>
     <string name="bmi">BMI</string>
     <string name="del">Delete</string>
-    <string name="overWeightTips">You Are OverWeight !</string>
+    <string name="overWeightTips">You Are OverWeight!</string>
     <string name="overWeightTip">1.Eat more fruit, vegetables, nuts, and whole grains.</string>
     <string name="overWeightTip2">2.Exercise, even moderately, for at least 30 minutes a day.</string>
     <string name="overWeightTip3">3.Cut down your consumption of fatty and sugary foods.</string>
     <string name="overWeightTip4">4.Use vegetable-based oils rather than animal-based fats.</string>
 
-
-    <string name="new_app_name">Training Plan</string>
-    <string name="beginner_exercise_window">ABS workouts</string>
-    <string name="training_plan_text_view">Training Plan</string>
-    <string name="report_window">Report</string>
-    <string name="history_window">History</string>
-    <string name="textView10">BEGINNER</string>
-    <string name="exerciseListTextView">Exercise List</string>
-    <string name="finalView">GREAT Job</string>
-    <string name="selectDay_TextView">Select a Day</string>
-    <string name="previousworkoutTv">Previous workout</string>
-    <string name="todayworkouts">Today Workouts</string>
-    <string name="todaykcal">Today kcal</string>
-    <string name="weight">Weight</string>
-    <string name="Noofworkouts">Number Of Workouts</string>
-    <string name="totKcal">Total Kcal</string>
-    <string name="ok">OKAY</string>
-    <string name="noOfexcercises">Number of Exercises</string>
-
-    <string name="DailyMeals">Daily Meals</string>
-    <string name="breakfast">Breakfast</string>
-    <string name="lunch">Lunch</string>
-    <string name="Dinner">Dinner</string>
-    <string name="food">Food Name</string>
-    <string name="Selectmeal">Select Meals</string>
-    <string name="title_activity_date_picker">DatePicker</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
-
-    <string name="hello_first_fragment">Hello first fragment</string>
-    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
-    <string name="title_activity_caloriecal_date_pick">CaloriecalDatePick</string>
-    <string name="title_activity_caloriecal_history">CaloriecalHistory</string>
-    <string name="title_activity_caloriecal_daily_report">CaloriecalDailyReport</string>
-    <string name="title_activity_caloriecal_daily_meal">CaloriecalDailyMeal</string>
-    <string name="title_activity_caloriecal_first_breakfast">CaloriecalFirstBreakfast</string>
-    <string name="hoppers">Hoppers</string>
-    <string name="stringhoppers">String Hoppers</string>
-    <string name="redrice">Red Rice</string>
-    <string name="add">add</string>
+    <string name="age">Age :</string>
+    <string name="height">Height :</string>
+    <string name="weight">Weight :</string>
+    <string name="bmiIndex">BMI Index :</string>
 </resources>

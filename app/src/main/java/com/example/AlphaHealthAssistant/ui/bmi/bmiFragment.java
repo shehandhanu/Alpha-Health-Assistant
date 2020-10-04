@@ -17,8 +17,6 @@ import com.google.android.material.tabs.TabLayout;
 
 public class bmiFragment extends Fragment {
 
-
-
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -65,27 +63,41 @@ class BMIList extends FragmentStatePagerAdapter {
         this.noOfTabs = NumberOfTabs;
     }
 
+    private float bmires = -1;
 
     @Override
     public Fragment getItem(int position) {
-        Fragment fragment = null;
-
+        BMICalculatorFragment calcFrag = null;
+        BMIHistoryFragment histFrag;
+        BMITipsFragment tipsFrag;
 
         if (position == 0) {
-            fragment = new BMICalculatorFragment();
+            calcFrag = BMICalculatorFragment.newInstance("Para_1", "Para_2");
+            return calcFrag;
         }
         if (position == 1) {
-            fragment = new BMIHistoryFragment();
+            histFrag = new BMIHistoryFragment();
+            return histFrag;
         }
         if (position == 2) {
-            fragment = new BMITipsFragment();
+            /* calcFrag should not be a null. Otherwise a NullPointerException would be thrown.
+             *  null first is required prior to invoke the "getBmiRes" method.
+             *  So that the method would not be invoked on a null object.
+             */
+            if(calcFrag != null)
+                bmires = calcFrag.getBmiRes();
+
+            tipsFrag = BMITipsFragment.newInstance(bmires);
+            return tipsFrag;
         }
 
-        return fragment;
+        return null;
     }
 
     @Override
     public int getCount() {
         return 3;
     }
+
 }
+
