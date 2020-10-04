@@ -83,8 +83,8 @@ public class Report extends AppCompatActivity {
                                 int val6 = Integer.parseInt(snapshot.child("exercise06").getValue().toString());
                                 int val7 = Integer.parseInt(snapshot.child("exercise07").getValue().toString());
 
-                                int finalVal = val1 + val2 + val3 + val4 + val5 + val6 + val7;
-
+                                //int finalVal = val1 + val2 + val3 + val4 + val5 + val6 + val7;
+                                int finalVal = ((val1 * 8) + (val2 * 6) + (val3 * 8) + (val4 * 15) + (val5 * 4) + (val6 * 4) + (val7 * 4));
                                 e1.setText("" + finalVal);
                             } else {
                                 Toast.makeText(getApplicationContext(), "No source to display....", Toast.LENGTH_SHORT).show();
@@ -96,6 +96,29 @@ public class Report extends AppCompatActivity {
 
                         }
                     });
+
+                    /*DatabaseReference repDb = FirebaseDatabase.getInstance().getReference().child("Beginner").child("chest");
+                    repDb.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.hasChildren()){
+                                int val1 = Integer.parseInt(snapshot.child("ex01").getValue().toString());
+                                int val2 = Integer.parseInt(snapshot.child("ex02").getValue().toString());
+                                int val3 = Integer.parseInt(snapshot.child("ex03").getValue().toString());
+                                int val4 = Integer.parseInt(snapshot.child("ex04").getValue().toString());
+                                int val5 = Integer.parseInt(snapshot.child("ex05").getValue().toString());
+
+                                //int finalVal
+
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });*/
+
                 }
             });
         } catch (Exception e) {
