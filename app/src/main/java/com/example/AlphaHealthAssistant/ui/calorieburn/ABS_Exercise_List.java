@@ -50,6 +50,10 @@ public class ABS_Exercise_List extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_b_s__exercise__list);
 
+        FirebaseDatabase database = FirebaseDatabase.getInstance();
+        DatabaseReference myRef = database.getReference("message");
+
+        myRef.setValue("Hello, World!");
 
         editText01 = findViewById(R.id.et_01);
         editText02 = findViewById(R.id.et_02);
@@ -128,7 +132,7 @@ public class ABS_Exercise_List extends AppCompatActivity {
                         abs.setExercise07(Integer.parseInt(editText07.getText().toString().trim()));
 
                         //dbRef.push().setValue(abs);
-                        dbRef.child("abs").setValue(abs);
+                        dbRef.child("Cast").setValue(abs);
                         //dbRef.setValue(abs);
                         Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_SHORT).show();
                         clearControls();

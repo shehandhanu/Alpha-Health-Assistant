@@ -85,10 +85,12 @@ public class CalorieburnFragment extends Fragment {
                 weightget.setWeight(Double.parseDouble(e1.getText().toString().trim()));
 
                 dbRef.child("Beginning").setValue(weightget);
+                System.out.println("Methana inneeeee");
 
             }
         } catch (Exception e) {
             e.printStackTrace();
+            System.out.println("Dn Methanaaaa");
         }
 
     }
