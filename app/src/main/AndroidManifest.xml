@@ -33,7 +33,7 @@
             android:parentActivityName=".ui.calorieburn.CalorieBurnBeginner" />
         <activity
             android:name=".ui.calorieburn.CalorieBurnBeginner"
-            android:label="@string/title_activity_calorie_burn_beginner"
+            android:label="CalorieBurnBeginner"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".ui.calorieburn.aaaaaaaaaaaa" />
         <activity android:name=".AlphaHealthAssistant">

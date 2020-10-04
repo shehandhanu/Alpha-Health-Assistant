@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "738147869292",
-    "firebase_url": "https://sample-3-2ee74.firebaseio.com",
-    "project_id": "sample-3-2ee74",
-    "storage_bucket": "sample-3-2ee74.appspot.com"
+    "project_number": "1050613782114",
+    "firebase_url": "https://sample-3-f4356.firebaseio.com",
+    "project_id": "sample-3-f4356",
+    "storage_bucket": "sample-3-f4356.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:738147869292:android:cda8685ec60c7db886ee49",
+        "mobilesdk_app_id": "1:1050613782114:android:cdb526151009dae3e9a33b",
         "android_client_info": {
           "package_name": "com.example.AlphaHealthAssistant"
         }
       },
       "oauth_client": [
         {
-          "client_id": "738147869292-ul8asq4kpbnr87seialq57leoflto8bl.apps.googleusercontent.com",
+          "client_id": "1050613782114-nh0ngp05072lbqamrud0f313u4ec6pc3.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyBjY3hEFAgQC92ulTGoiDN0gZ-Mevs1TeQ"
+          "current_key": "AIzaSyCC7YbjOTmEK_L7Xp_1cmr1ti7X3c8aBZc"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "738147869292-ul8asq4kpbnr87seialq57leoflto8bl.apps.googleusercontent.com",
+              "client_id": "1050613782114-nh0ngp05072lbqamrud0f313u4ec6pc3.apps.googleusercontent.com",
               "client_type": 3
             }
           ]
