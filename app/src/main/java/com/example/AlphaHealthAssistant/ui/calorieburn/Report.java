@@ -21,7 +21,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Report extends AppCompatActivity {
 
-    Button beginnerButton;
+    Button beginnerButton, currentWeight;
     EditText e1, e2, e3, e4, e5, e6, e7;
 
     @Override
@@ -30,6 +30,7 @@ public class Report extends AppCompatActivity {
         setContentView(R.layout.activity_report);
 
         beginnerButton = findViewById(R.id.beginnerbutton);
+        currentWeight = findViewById(R.id.currentWeight);
 
         e1 = findViewById(R.id.view1);
         e2 = findViewById(R.id.view2);
@@ -38,6 +39,29 @@ public class Report extends AppCompatActivity {
         e5 = findViewById(R.id.view5);
         e6 = findViewById(R.id.view6);
         e7 = findViewById(R.id.view7);
+
+        currentWeight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference rep = FirebaseDatabase.getInstance().getReference().child("Weight").child("Beginning");
+                rep.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.hasChildren()) {
+                            e6.setText(snapshot.child("weight").getValue().toString());
+                            e7.setText(snapshot.child("weight").getValue().toString());
+                        } else {
+                            Toast.makeText(getApplicationContext(), "No source to display....", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
 
     }
 

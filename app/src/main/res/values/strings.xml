@@ -114,5 +114,6 @@
     <string name="beginnerLable">Beginner</string>
     <string name="intermediateLable">Intermediate</string>
     <string name="prolable">Pro</string>
+    <string name="WeightCurrent">current weight</string>
 
 </resources>
