@@ -44,12 +44,12 @@
 
             <Button
                 android:id="@+id/button4"
-                android:layout_width="30dp"
-                android:layout_height="35dp"
+                android:layout_width="42dp"
+                android:layout_height="39dp"
                 android:layout_marginStart="128dp"
                 android:layout_marginLeft="128dp"
                 android:layout_marginTop="244dp"
-                android:background="#FFEB3B"
+                android:background="@drawable/mini_btn"
                 android:onClick="decreaseIntegerSecond"
                 android:text="-"
                 android:textColor="#1B1A19"
@@ -57,52 +57,13 @@
                 app:layout_constraintTop_toTopOf="parent" />
 
             <Button
-                android:id="@+id/addAvacadoJuice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="320dp"
-                android:layout_marginLeft="320dp"
-                android:layout_marginTop="376dp"
-                android:background="#2FAC27"
-                android:text="Add"
-                android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/addHoppers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="320dp"
-                android:layout_marginLeft="320dp"
-                android:layout_marginTop="512dp"
-                android:background="#2FAC27"
-                android:text="Add"
-                android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/addStringHoppers"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="320dp"
-                android:layout_marginLeft="320dp"
-                android:layout_marginTop="656dp"
-                android:background="#2FAC27"
-                android:text="Add"
-                android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
                 android:id="@+id/button13"
-                android:layout_width="30dp"
-                android:layout_height="35dp"
+                android:layout_width="43dp"
+                android:layout_height="39dp"
                 android:layout_marginStart="120dp"
                 android:layout_marginLeft="120dp"
                 android:layout_marginTop="92dp"
-                android:background="#FFEB3B"
+                android:background="@drawable/mini_btn"
                 android:onClick="decreaseInteger"
                 android:text="-"
                 app:layout_constraintStart_toStartOf="parent"
@@ -110,12 +71,12 @@
 
             <Button
                 android:id="@+id/button16"
-                android:layout_width="30dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="132dp"
-                android:layout_marginLeft="132dp"
-                android:layout_marginTop="388dp"
-                android:background="#FFEB3B"
+                android:layout_width="43dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="128dp"
+                android:layout_marginLeft="128dp"
+                android:layout_marginTop="380dp"
+                android:background="@drawable/mini_btn"
                 android:onClick="decreaseIntegerThird"
                 android:text="-"
                 app:layout_constraintStart_toStartOf="parent"
@@ -123,12 +84,12 @@
 
             <Button
                 android:id="@+id/button8"
-                android:layout_width="30dp"
-                android:layout_height="35dp"
+                android:layout_width="47dp"
+                android:layout_height="40dp"
                 android:layout_marginStart="132dp"
                 android:layout_marginLeft="132dp"
-                android:layout_marginTop="512dp"
-                android:background="#FFEB3B"
+                android:layout_marginTop="516dp"
+                android:background="@drawable/mini_btn"
                 android:onClick="decreaseIntegerFourth"
                 android:text="-"
                 app:layout_constraintStart_toStartOf="parent"
@@ -149,12 +110,12 @@
 
             <Button
                 android:id="@+id/increase"
-                android:layout_width="30dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="276dp"
-                android:layout_marginLeft="276dp"
-                android:layout_marginTop="388dp"
-                android:background="#FFEB3B"
+                android:layout_width="47dp"
+                android:layout_height="40dp"
+                android:layout_marginStart="308dp"
+                android:layout_marginLeft="308dp"
+                android:layout_marginTop="380dp"
+                android:background="@drawable/mini_btn"
                 android:onClick="increaseIntegerThird"
                 android:text="+"
                 android:textColor="#1B1A19"
@@ -163,12 +124,12 @@
 
             <Button
                 android:id="@+id/increase4"
-                android:layout_width="30dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="276dp"
-                android:layout_marginLeft="276dp"
-                android:layout_marginTop="512dp"
-                android:background="#FFEB3B"
+                android:layout_width="50dp"
+                android:layout_height="41dp"
+                android:layout_marginStart="308dp"
+                android:layout_marginLeft="308dp"
+                android:layout_marginTop="516dp"
+                android:background="@drawable/mini_btn"
                 android:onClick="increaseIntegerFourth"
                 android:text="+"
                 android:textColor="#1B1A19"
@@ -191,30 +152,30 @@
 
             <Button
                 android:id="@+id/increase3"
-                android:layout_width="32dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="264dp"
-                android:layout_marginLeft="264dp"
+                android:layout_width="51dp"
+                android:layout_height="44dp"
+                android:layout_marginStart="304dp"
+                android:layout_marginLeft="304dp"
                 android:layout_marginTop="92dp"
-                android:background="#FFEB3B"
+                android:background="@drawable/mini_btn"
                 android:onClick="increaseInteger"
                 android:text="+"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
+
             <Button
                 android:id="@+id/increase2"
-                android:layout_width="30dp"
-                android:layout_height="35dp"
-                android:layout_marginStart="276dp"
-                android:layout_marginLeft="276dp"
+                android:layout_width="47dp"
+                android:layout_height="42dp"
+                android:layout_marginStart="308dp"
+                android:layout_marginLeft="308dp"
                 android:layout_marginTop="244dp"
-                android:background="#FFEB3B"
+                android:background="@drawable/mini_btn"
                 android:onClick="increaseIntegerSecond"
                 android:text="+"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
-
 
             <ImageView
                 android:id="@+id/imageView3"
@@ -297,32 +258,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <Button
-                android:id="@+id/addOrangeJuice"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="320dp"
-                android:layout_marginLeft="320dp"
-                android:layout_marginTop="240dp"
-                android:background="#2FAC27"
-                android:text="Add"
-                android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <Button
-                android:id="@+id/AddMilkCofeeBtn"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="320dp"
-                android:layout_marginLeft="320dp"
-                android:layout_marginTop="80dp"
-                android:background="#2FAC27"
-                android:text="Add"
-                android:textStyle="italic"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
             <TextView
                 android:id="@+id/textView15"
                 android:layout_width="wrap_content"
@@ -344,6 +279,12 @@
                 android:layout_marginStart="192dp"
                 android:layout_marginLeft="192dp"
                 android:layout_marginTop="720dp"
+                android:layout_marginEnd="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginBottom="6dp"
+                android:textSize="24sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/btnSave"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -351,11 +292,12 @@
                 android:id="@+id/milkcofeee"
                 android:layout_width="92dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="160dp"
-                android:layout_marginLeft="160dp"
-                android:layout_marginTop="84dp"
+                android:layout_marginStart="188dp"
+                android:layout_marginLeft="188dp"
+                android:layout_marginTop="92dp"
                 android:ems="10"
                 android:inputType="number"
+                android:text="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -363,11 +305,12 @@
                 android:id="@+id/OrangeJuice"
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="164dp"
-                android:layout_marginLeft="164dp"
-                android:layout_marginTop="244dp"
+                android:layout_marginStart="192dp"
+                android:layout_marginLeft="192dp"
+                android:layout_marginTop="232dp"
                 android:ems="10"
                 android:inputType="number"
+                android:text="0"
                 android:textSize="18sp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -376,11 +319,12 @@
                 android:id="@+id/avocadoJuice"
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="176dp"
-                android:layout_marginLeft="176dp"
-                android:layout_marginTop="376dp"
+                android:layout_marginStart="192dp"
+                android:layout_marginLeft="192dp"
+                android:layout_marginTop="380dp"
                 android:ems="10"
                 android:inputType="number"
+                android:text="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -388,11 +332,12 @@
                 android:id="@+id/hoppers"
                 android:layout_width="88dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="176dp"
-                android:layout_marginLeft="176dp"
+                android:layout_marginStart="192dp"
+                android:layout_marginLeft="192dp"
                 android:layout_marginTop="512dp"
                 android:ems="10"
                 android:inputType="number"
+                android:text="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -405,6 +350,7 @@
                 android:layout_marginTop="650dp"
                 android:ems="10"
                 android:inputType="number"
+                android:text="0"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
@@ -412,12 +358,12 @@
                 android:id="@+id/btnSave"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="308dp"
-                android:layout_marginLeft="308dp"
-                android:layout_marginTop="724dp"
-                android:background="#2FAC27"
+                android:layout_marginStart="304dp"
+                android:layout_marginLeft="304dp"
+                android:layout_marginTop="720dp"
+                android:background="@drawable/btn_rounded"
                 android:bufferType="normal"
-                android:text="Save"
+                android:text="@string/addButton"
                 android:textColor="@android:color/black"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />

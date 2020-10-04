@@ -6,6 +6,9 @@ public class Meal {
     private Integer CountavocadoJuice;
     private Integer Counthoppers;
     private Integer CountStringHoppers;
+    private String date;
+
+
 
     public Meal() {
     }
@@ -48,5 +51,12 @@ public class Meal {
 
     public void setCountStringHoppers(Integer countStringHoppers) {
         CountStringHoppers = countStringHoppers;
+    }
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

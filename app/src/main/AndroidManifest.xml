@@ -9,24 +9,31 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.caloriecal.CalorieCalLunch"
-            android:label="Lunch"></activity>
-
+        <activity android:name=".ui.caloriecal.CaloriecalDinner"
+            android:label="@string/Dinner"
+            android:parentActivityName=".ui.caloriecal.CaloriecalDinner"></activity>
+        <activity
+            android:name=".ui.caloriecal.CalorieCalLunch"
+            android:label="Lunch"
+            android:parentActivityName=".ui.caloriecal.CaloriecalDailyMeal"/>
         <activity
             android:name=".ui.caloriecal.CaloriecalDailyMeal"
             android:label="@string/title_activity_caloriecal_daily_meal"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity
             android:name=".ui.caloriecal.CaloriecalBreakfast"
-            android:label="Breakfast" />
+            android:label="Breakfast"
+            android:parentActivityName=".ui.caloriecal.CaloriecalDailyMeal"/>
         <activity
             android:name=".ui.caloriecal.CaloriecalDailyReport"
-            android:label="@string/title_activity_caloriecal_daily_report"
+            android:label="@string/dailyreport"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".ui.caloriecal.CaloriecalHistory"
             android:label="@string/title_activity_caloriecal_history"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppTheme.NoActionBar"
+            />
         <activity android:name=".AlphaHealthAssistant">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

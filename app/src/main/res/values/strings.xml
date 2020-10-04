@@ -75,4 +75,18 @@
     <string name="stringhoppers">String Hoppers</string>
     <string name="redrice">Red Rice</string>
     <string name="add">add</string>
+    <string name="addButton">add</string>
+    <string name="b1">MilkCofee</string>
+    <string name="b2">OrangeJuice</string>
+    <string name="b3">AvocadoJuice</string>
+    <string name="b4">Hoppers</string>
+    <string name="b5">StringHoppers</string>
+    <string name="l1">Red Rice</string>
+    <string name="l2">Green Beans Curry</string>
+    <string name="l3">Tomato Curry</string>
+    <string name="l4">Mushroom Curry</string>
+    <string name="d1">Bread</string>
+    <string name="d2">Noodles</string>
+    <string name="d5">Coconut Roti</string>
+    <string name="dailyreport">Daily Report</string>
 </resources>

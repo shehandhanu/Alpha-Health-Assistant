@@ -53,8 +53,9 @@ public class CaloriecalFragment extends Fragment {
                     picker[0] = new DatePickerDialog(getContext(), new DatePickerDialog.OnDateSetListener() {
                         @Override
                         public void onDateSet(DatePicker view, int year, int month, int dayOfMonth) {
+                            String date = ""+year+"/"+(month+1)+"/"+dayOfMonth;
                             Intent in = new Intent(getActivity(), CaloriecalDailyMeal.class);
-                            in.putExtra("date", String.valueOf(year + "/"+month+"/"+dayOfMonth));
+                            in.putExtra("date",date);
                             startActivity(in);
 
                         }

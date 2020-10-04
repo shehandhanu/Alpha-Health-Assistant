@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#EAEAA0"
     tools:context=".ui.caloriecal.CaloriecalDailyMeal">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -20,95 +21,9 @@
 
     </com.google.android.material.appbar.AppBarLayout>
 
-    <include layout="@layout/content_caloriecal_daily_meal" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="204dp"
-        android:layout_height="78dp"
-        android:layout_marginLeft="100px"
-        android:text="@string/DailyMeals"
-        android:textAllCaps="false"
-        android:textColor="#131212"
-        android:textSize="36sp"
-        android:textStyle="italic" />
-
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="0dp"
-        android:layout_height="255dp"
-        android:layout_marginTop="92dp" />
-
-    <ImageButton
-        android:id="@+id/breakfastBtn"
-        android:layout_width="273dp"
-        android:layout_height="104dp"
-        android:layout_marginLeft="200px"
-        android:layout_marginTop="600px"
-        android:src="@drawable/breakfast" />
-
-    <ImageButton
-        android:id="@+id/lunchBtn"
-        android:layout_width="273dp"
-        android:layout_height="106dp"
-        android:layout_marginLeft="200px"
-        android:layout_marginTop="1200px"
-        android:src="@drawable/lunch" />
-
-    <TextView
-        android:id="@+id/textView3"
-        android:layout_width="189dp"
-        android:layout_height="56dp"
-        android:layout_marginLeft="300px"
-        android:layout_marginTop="700px"
-        android:text="@string/breakfast"
-        android:textAlignment="center"
-        android:textColor="#F3EBEB"
-        android:textSize="36sp" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="185dp"
-        android:layout_height="57dp"
-        android:layout_marginLeft="300px"
-        android:layout_marginTop="1300px"
-        android:text="@string/lunch"
-        android:textAlignment="center"
-        android:textColor="#FAF7F7"
-        android:textSize="36sp" />
-
-    <ImageButton
-        android:id="@+id/DinnerBtn"
-        android:layout_width="273dp"
-        android:layout_height="116dp"
-        android:layout_marginLeft="200px"
-        android:layout_marginTop="1800px"
-        android:src="@drawable/dinner" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="197dp"
-        android:layout_height="64dp"
-        android:layout_marginLeft="300px"
-        android:layout_marginTop="1850px"
-        android:text="@string/Dinner"
-        android:textAlignment="center"
-        android:textColor="#F6F0F0"
-        android:textSize="36sp" />
-
-    <TextView
-        android:id="@+id/dateTxt"
-        android:layout_width="211dp"
-        android:layout_height="59dp"
-        android:layout_marginLeft="300px"
-        android:layout_marginTop="300px" />
+    <include
+        layout="@layout/content_caloriecal_daily_meal"
+        android:background="#EAEAA0" />
 
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

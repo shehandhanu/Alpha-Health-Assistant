@@ -2,7 +2,10 @@ package com.example.AlphaHealthAssistant.ui.caloriecal;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.TextView;
 import android.widget.Button;
@@ -15,6 +18,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class CaloriecalBreakfast extends AppCompatActivity {
+    private boolean checkEmpty = false;
     int minteger = 0;
     int minteger1 = 0;
     int minteger2 = 0;
@@ -42,58 +46,10 @@ public class CaloriecalBreakfast extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caloriecal_breakfast);
-        addNumber();
 
-        final EditText OrangeJuice = findViewById(R.id.OrangeJuice);
-        final Button buttonAddOrange = findViewById(R.id.addOrangeJuice);
-        final TextView tv_final = findViewById(R.id.CalorieTot);
-        buttonAddOrange.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                number02 = Integer.parseInt(OrangeJuice.getText().toString());
-                newNumber02 = Integer.parseInt(tv_final.getText().toString());
-                num_second = (number02 * 45) + newNumber02;
-                tv_final.setText(String.valueOf(num_second));
-            }
-        });
-
-        final EditText AvacadoJuice = findViewById(R.id.avocadoJuice);
-        final Button buttonAddAvacado = findViewById(R.id.addAvacadoJuice);
-
-        buttonAddAvacado.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                number03 = Integer.parseInt(AvacadoJuice.getText().toString());
-                newNumber02 = Integer.parseInt(tv_final.getText().toString());
-                num_third = (number03 * 160) + newNumber02;
-                tv_final.setText(String.valueOf(num_third));
-            }
-        });
-
-        final EditText Hoppers = findViewById(R.id.hoppers);
-        final Button buttonAddhoppers = findViewById(R.id.addHoppers);
-
-        buttonAddhoppers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                number04 = Integer.parseInt(Hoppers.getText().toString());
-                newNumber02 = Integer.parseInt(tv_final.getText().toString());
-                num_fourth = (number03 * 160) + newNumber02;
-                tv_final.setText(String.valueOf(num_fourth));
-            }
-        });
-        final EditText StringHoppers = findViewById(R.id.stringHoppers);
-        final Button buttonAddStringhoppers = findViewById(R.id.addStringHoppers);
-
-        buttonAddStringhoppers.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                number05 = Integer.parseInt(StringHoppers.getText().toString());
-                newNumber02 = Integer.parseInt(tv_final.getText().toString());
-                num_fifth = (number05 * 160) + newNumber02;
-                tv_final.setText(String.valueOf(num_fifth));
-            }
-        });
+        Intent in = getIntent();
+        Toast.makeText(this, in.getStringExtra("date"), Toast.LENGTH_SHORT).show();
+        String date = in.getStringExtra("date");
 
         txtmilkCofeeCount = findViewById(R.id.milkcofeee);
         txtOrangejuiceCount = findViewById(R.id.OrangeJuice);
@@ -102,23 +58,74 @@ public class CaloriecalBreakfast extends AppCompatActivity {
         txtHoppersCount = findViewById(R.id.hoppers);
 
         save = findViewById(R.id.btnSave);
+        final TextView tv_final = findViewById(R.id.CalorieTot);
+
 
         meal = new Meal();
         save.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //calculation part
+                Editable num01 = txtmilkCofeeCount.getText();
+                Editable num02 = txtOrangejuiceCount.getText();
+                Editable num03 = txtAvocadojuiceCount.getText();
+                Editable num04 = txtHoppersCount.getText();
+                Editable num05 = txtStringHoppersCount.getText();
+
+
+                if (num01.toString().isEmpty()){
+                    checkEmpty = true;
+                }else if (num02.toString().isEmpty()){
+                    checkEmpty = true;
+                }else if (num03.toString().isEmpty()){
+                    checkEmpty = true;
+                }else if (num04.toString().isEmpty()){
+                    checkEmpty = true;
+                }else if (num05.toString().isEmpty()){
+                    checkEmpty = true;
+                }else{
+                    number01 = Integer.parseInt(txtmilkCofeeCount.getText().toString());
+
+                    number02 = Integer.parseInt(txtOrangejuiceCount.getText().toString());
+
+                    number03 = Integer.parseInt(txtAvocadojuiceCount.getText().toString());
+
+                    number04 = Integer.parseInt(txtHoppersCount.getText().toString());
+
+                    number05 = Integer.parseInt(txtStringHoppersCount.getText().toString());
+
+                    checkEmpty  =false;
+                }
+                int finalValue = (number01 * 150) + (number02 * 45) + (number03 * 160) + (number04 * 160) + (number05 * 160);
+                tv_final.setText(""+finalValue);
+
+                //data adding to data base part
                 dbRef = FirebaseDatabase.getInstance().getReference().child("breakfast");
                 try{
-                    meal.setCountmilkcofee(Integer.parseInt(txtmilkCofeeCount.getText().toString().trim()));
-                    meal.setCountorangeJuice(Integer.parseInt(txtOrangejuiceCount.getText().toString().trim()));
-                    meal.setCountavocadoJuice(Integer.parseInt(txtAvocadojuiceCount.getText().toString().trim()));
-                    meal.setCounthoppers(Integer.parseInt(txtHoppersCount.getText().toString().trim()));
-                    meal.setCountStringHoppers(Integer.parseInt(txtStringHoppersCount.getText().toString().trim()));
+                    if(TextUtils.isEmpty(txtmilkCofeeCount.getText().toString())){
+                        meal.setCountmilkcofee (0) ;
+                    }else if(TextUtils.isEmpty(txtOrangejuiceCount.getText().toString())){
+                        meal.setCountorangeJuice(0);
+                    }else if(TextUtils.isEmpty(txtAvocadojuiceCount.getText().toString())){
+                        meal.setCountavocadoJuice(0);
+                    }else if(TextUtils.isEmpty(txtHoppersCount.getText().toString())){
+                        meal.setCounthoppers(0);
+                    }else if(TextUtils.isEmpty(txtStringHoppersCount.getText().toString())){
+                        meal.setCountStringHoppers(0);
+                    }else {
+                        meal.setCountmilkcofee(Integer.parseInt(txtmilkCofeeCount.getText().toString().trim()));
+                        meal.setCountorangeJuice(Integer.parseInt(txtOrangejuiceCount.getText().toString().trim()));
+                        meal.setCountavocadoJuice(Integer.parseInt(txtAvocadojuiceCount.getText().toString().trim()));
+                        meal.setCounthoppers(Integer.parseInt(txtHoppersCount.getText().toString().trim()));
+                        meal.setCountStringHoppers(Integer.parseInt(txtStringHoppersCount.getText().toString().trim()));
+                        meal.setDate(date);
 
-                    dbRef.push().setValue(meal);
+                        dbRef.child("today").setValue(meal);
 
-                    Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
-                    clearControls();
+                        Toast.makeText(getApplicationContext(), "Data saved successfully", Toast.LENGTH_SHORT).show();
+                        clearControls();
+                    }
                 } catch (Exception e) {
                     e.printStackTrace();
                 }
@@ -128,20 +135,7 @@ public class CaloriecalBreakfast extends AppCompatActivity {
 
 
     }
-    public void addNumber(){
 
-        final EditText milccofee = findViewById(R.id.milkcofeee);
-        final Button buttonAddMilkCoffe = findViewById(R.id.AddMilkCofeeBtn);
-        final TextView tv_final = findViewById(R.id.CalorieTot);
-        buttonAddMilkCoffe.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                number01 = Integer.parseInt(milccofee.getText().toString());
-                num = number01 * 150;
-                tv_final.setText(String.valueOf(num));
-            }
-        });
-    }
 
 
     public void increaseInteger(View view) {

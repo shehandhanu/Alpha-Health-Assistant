@@ -25,41 +25,47 @@ public class CaloriecalDailyMeal extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+        Intent newInt = getIntent();
+        Toast.makeText(this, newInt.getStringExtra("date"), Toast.LENGTH_LONG).show();
+
+
+
+
+
         BreakfastBtn = findViewById(R.id.breakfastBtn);
         lunchBtn = findViewById(R.id.lunchBtn);
         DinnerBtn = findViewById(R.id.DinnerBtn);
         txt1Date = findViewById(R.id.dateTxt);
-
+        txt1Date.setText(newInt.getStringExtra("date"));
+        String date = newInt.getStringExtra("date");
         BreakfastBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CaloriecalDailyMeal.this, CaloriecalBreakfast.class));
+                Intent in = new Intent(CaloriecalDailyMeal.this, CaloriecalBreakfast.class);
+                in.putExtra("date",date);
+                startActivity(in);
+
             }
         });
         lunchBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(CaloriecalDailyMeal.this, CalorieCalLunch.class));
+                Intent in = new Intent(CaloriecalDailyMeal.this, CalorieCalLunch.class);
+                in.putExtra("date",date);
+                startActivity(in);
+
             }
         });
         DinnerBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent in = new Intent(CaloriecalDailyMeal.this, CaloriecalDinner.class);
+                in.putExtra("date",date);
+                startActivity(in);
 
             }
         });
 
-        Intent newInt = getIntent();
-        Toast.makeText(this, newInt.getStringExtra("date"), Toast.LENGTH_LONG).show();
-         txt1Date.setText(newInt.getStringExtra("date"));
 
     }
 }

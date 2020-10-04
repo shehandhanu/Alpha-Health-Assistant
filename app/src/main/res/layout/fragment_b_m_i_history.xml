@@ -218,7 +218,7 @@
         android:textSize="20sp" />
 
     <Button
-        android:id="@+id/button3"
+        android:id="@+id/date"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:layout_alignParentStart="false"
@@ -372,7 +372,7 @@
         android:background="#F3A8A8" />
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/btnUpdate"
         android:layout_width="227dp"
         android:layout_height="48dp"
         android:layout_alignParentStart="false"
