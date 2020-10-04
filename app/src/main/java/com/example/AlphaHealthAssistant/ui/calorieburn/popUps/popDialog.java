@@ -1,4 +1,4 @@
-package com.example.AlphaHealthAssistant.ui.calorieburn;
+package com.example.AlphaHealthAssistant.ui.calorieburn.popUps;
 
 import android.app.Dialog;
 import android.content.DialogInterface;

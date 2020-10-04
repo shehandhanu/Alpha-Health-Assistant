@@ -9,6 +9,33 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".ui.calorieburn.Final_result_view"></activity>
+        <activity android:name=".ui.calorieburn.Report" />
+        <activity
+            android:name=".ui.calorieburn.shoulder_beginner"
+            android:label="-Shoulder workouts-"
+            android:parentActivityName=".ui.calorieburn.CalorieBurnBeginner" />
+        <activity
+            android:name=".ui.calorieburn.arm_beginner"
+            android:label="-Arm workouts-"
+            android:parentActivityName=".ui.calorieburn.CalorieBurnBeginner" />
+        <activity
+            android:name=".ui.calorieburn.leg_beginner"
+            android:label="-Leg workouts-"
+            android:parentActivityName=".ui.calorieburn.CalorieBurnBeginner" />
+        <activity
+            android:name=".ui.calorieburn.chest_beginner"
+            android:label="-Chest workouts-"
+            android:parentActivityName=".ui.calorieburn.CalorieBurnBeginner" />
+        <activity
+            android:name=".ui.calorieburn.ABS_Exercise_List"
+            android:label="-abs workouts-"
+            android:parentActivityName=".ui.calorieburn.CalorieBurnBeginner" />
+        <activity
+            android:name=".ui.calorieburn.CalorieBurnBeginner"
+            android:label="@string/title_activity_calorie_burn_beginner"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".ui.calorieburn.aaaaaaaaaaaa" />
         <activity android:name=".AlphaHealthAssistant">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
