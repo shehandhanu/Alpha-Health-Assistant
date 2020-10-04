@@ -46,20 +46,20 @@ public class WaterHistoryFragment extends Fragment {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("Added Water");
 
-        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-                for(DataSnapshot ds: snapshot.getChildren()){
-                    WaterReminder data = ds.getValue(WaterReminder.class);
-                    historyData.add(data);
-                }
-                helperAdapter = new HelperAdapter(historyData);
-            }
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+//                for(DataSnapshot ds: snapshot.getChildren()){
+//                    WaterReminder data = ds.getValue(WaterReminder.class);
+//                    historyData.add(data);
+//                }
+//                helperAdapter = new HelperAdapter(historyData);
+//            }
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
         return view;
     }

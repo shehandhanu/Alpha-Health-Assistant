@@ -11,6 +11,10 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.AlphaHealthAssistant.R;
+import com.google.android.material.tabs.TabLayout;
+
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 public class DashboardFragment extends Fragment {
 
@@ -19,11 +23,21 @@ public class DashboardFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View root = inflater.inflate(R.layout.fragment_dashboard,container,false);
-        text = root.findViewById(R.id.text_dashboard);
+        View view = inflater.inflate(R.layout.fragment_dashboard,container,false);
 
-        text.setText("Dashboard");
+        text = view.findViewById(R.id.text_dashboard);
 
-        return root;
+        String currentTime,currentDate;
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat dateFormat = new SimpleDateFormat("MMM dd yyyy");
+        currentDate = dateFormat.format(calendar.getTime());
+
+        System.out.println("///////////////////////////////////////////////////////////////////////");
+
+        System.out.println(currentDate);
+
+        text.setText("Shehan");
+
+        return view;
     }
 }

@@ -97,6 +97,7 @@ public class WaterReminderFragment extends Fragment {
                     Toast.makeText(getContext(), "Updateing Current Limit", Toast.LENGTH_SHORT).show();
                     String value = snapshot.child("Daily Limit").getValue().toString().trim();
                     CurrentLimit.setText( "/" +value+ "ml");
+                    progressBar.setProgress(70);
                 }
 
                 @Override
