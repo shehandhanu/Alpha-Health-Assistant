@@ -116,5 +116,6 @@
     <string name="prolable">Pro</string>
     <string name="WeightCurrent">current weight</string>
     <string name="CategoryButton">CAtegory</string>
+    <string name="saveButton">save</string>
 
 </resources>

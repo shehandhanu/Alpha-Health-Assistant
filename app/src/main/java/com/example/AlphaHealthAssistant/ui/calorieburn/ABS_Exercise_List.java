@@ -61,6 +61,7 @@ public class ABS_Exercise_List extends AppCompatActivity {
         buttonFinal = findViewById(R.id.buttonToFinalResult);
 
         abs = new ABS();
+
         buttonFinal.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

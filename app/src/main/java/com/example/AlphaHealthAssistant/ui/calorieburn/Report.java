@@ -13,6 +13,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import com.example.AlphaHealthAssistant.R;
+import com.example.AlphaHealthAssistant.ui.calorieburn.dbHelper.Weightget;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -21,8 +22,10 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Report extends AppCompatActivity {
 
-    Button beginnerButton, currentWeight;
+    Button beginnerButton, currentWeight, saveCurrentWeight;
     EditText e1, e2, e3, e4, e5, e6, e7;
+    Weightget weightget;
+    DatabaseReference dbRep;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,6 +34,7 @@ public class Report extends AppCompatActivity {
 
         beginnerButton = findViewById(R.id.beginnerbutton);
         currentWeight = findViewById(R.id.currentWeight);
+        saveCurrentWeight = findViewById(R.id.updateWeightButton);
 
         e1 = findViewById(R.id.view1);
         e2 = findViewById(R.id.view2);
@@ -39,6 +43,8 @@ public class Report extends AppCompatActivity {
         e5 = findViewById(R.id.view5);
         e6 = findViewById(R.id.view6);
         e7 = findViewById(R.id.view7);
+
+        weightget = new Weightget();
 
         currentWeight.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -63,6 +69,39 @@ public class Report extends AppCompatActivity {
             }
         });
 
+    }
+
+    public void updateWeight(View view) {
+        //update weight function
+        currentWeight.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DatabaseReference updateWeight = FirebaseDatabase.getInstance().getReference().child("Weight");
+                updateWeight.addListenerForSingleValueEvent(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        if (snapshot.hasChild("Beginning")) {
+                            try {
+                                weightget.setWeight(Double.parseDouble(e7.getText().toString().trim()));
+
+                                dbRep = FirebaseDatabase.getInstance().getReference().child("Weight").child("Beginner");
+                                dbRep.setValue(weightget);
+
+                                Toast.makeText(getApplicationContext(), "Data updated...", Toast.LENGTH_SHORT).show();
+
+                            } catch (Exception e) {
+                                System.out.println("Error is : " + e);
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+            }
+        });
     }
 
     public void setABS(View view) {
