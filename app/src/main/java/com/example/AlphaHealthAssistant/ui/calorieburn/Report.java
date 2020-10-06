@@ -110,6 +110,7 @@ public class Report extends AppCompatActivity {
             beginnerButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
+                    //get abs work-out details
                     DatabaseReference readRef = FirebaseDatabase.getInstance().getReference().child("Beginner").child("abs");
                     readRef.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
@@ -126,6 +127,113 @@ public class Report extends AppCompatActivity {
                                 //int finalVal = val1 + val2 + val3 + val4 + val5 + val6 + val7;
                                 int finalVal = ((val1 * 8) + (val2 * 6) + (val3 * 8) + (val4 * 15) + (val5 * 4) + (val6 * 4) + (val7 * 4));
                                 e1.setText("" + finalVal);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "No source to display....", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    //get chest work-outs details
+                    DatabaseReference readRef2 = FirebaseDatabase.getInstance().getReference().child("Beginner").child("chest");
+                    readRef2.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.hasChildren()) {
+                                int val1 = Integer.parseInt(snapshot.child("ex1").getValue().toString());
+                                int val2 = Integer.parseInt(snapshot.child("ex2").getValue().toString());
+                                int val3 = Integer.parseInt(snapshot.child("ex3").getValue().toString());
+                                int val4 = Integer.parseInt(snapshot.child("ex4").getValue().toString());
+                                int val5 = Integer.parseInt(snapshot.child("ex5").getValue().toString());
+
+                                //int finalVal = val1 + val2 + val3 + val4 + val5 + val6 + val7;
+                                int finalVal2 = ((val1 * 8) + (val2 * 6) + (val3 * 8) + (val4 * 15) + (val5 * 4));
+                                e2.setText("" + finalVal2);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "No source to display....", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    //get leg work-outs details
+                    DatabaseReference readRef3 = FirebaseDatabase.getInstance().getReference().child("Beginner").child("leg");
+                    readRef3.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.hasChildren()) {
+                                int val1 = Integer.parseInt(snapshot.child("exercise01").getValue().toString());
+                                int val2 = Integer.parseInt(snapshot.child("exercise02").getValue().toString());
+                                int val3 = Integer.parseInt(snapshot.child("exercise03").getValue().toString());
+                                int val4 = Integer.parseInt(snapshot.child("exercise04").getValue().toString());
+                                int val5 = Integer.parseInt(snapshot.child("exercise05").getValue().toString());
+                                int val6 = Integer.parseInt(snapshot.child("exercise06").getValue().toString());
+
+                                //int finalVal = val1 + val2 + val3 + val4 + val5 + val6 + val7;
+                                int finalVal3 = ((val1 * 8) + (val2 * 6) + (val3 * 8) + (val4 * 15) + (val5 * 4) + (val6 * 4));
+                                e3.setText("" + finalVal3);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "No source to display....", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    //get arm work-outs details
+                    DatabaseReference readRef4 = FirebaseDatabase.getInstance().getReference().child("Beginner").child("arm");
+                    readRef4.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.hasChildren()) {
+                                int val1 = Integer.parseInt(snapshot.child("exercise01").getValue().toString());
+                                int val2 = Integer.parseInt(snapshot.child("exercise02").getValue().toString());
+                                int val3 = Integer.parseInt(snapshot.child("exercise03").getValue().toString());
+                                int val4 = Integer.parseInt(snapshot.child("exercise04").getValue().toString());
+                                int val5 = Integer.parseInt(snapshot.child("exercise05").getValue().toString());
+                                int val6 = Integer.parseInt(snapshot.child("exercise06").getValue().toString());
+
+                                //int finalVal = val1 + val2 + val3 + val4 + val5 + val6 + val7;
+                                int finalVal4 = ((val1 * 8) + (val2 * 6) + (val3 * 8) + (val4 * 15) + (val5 * 4) + (val6 * 4));
+                                e4.setText("" + finalVal4);
+                            } else {
+                                Toast.makeText(getApplicationContext(), "No source to display....", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
+
+                        }
+                    });
+
+                    //get shoulder work-outs details
+                    DatabaseReference readRef5 = FirebaseDatabase.getInstance().getReference().child("Beginner").child("shoulder");
+                    readRef5.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if (snapshot.hasChildren()) {
+                                int val1 = Integer.parseInt(snapshot.child("exercise01").getValue().toString());
+                                int val2 = Integer.parseInt(snapshot.child("exercise02").getValue().toString());
+                                int val3 = Integer.parseInt(snapshot.child("exercise03").getValue().toString());
+                                int val4 = Integer.parseInt(snapshot.child("exercise04").getValue().toString());
+                                int val5 = Integer.parseInt(snapshot.child("exercise05").getValue().toString());
+                                int val6 = Integer.parseInt(snapshot.child("exercise06").getValue().toString());
+
+                                //int finalVal = val1 + val2 + val3 + val4 + val5 + val6 + val7;
+                                int finalVal5 = ((val1 * 8) + (val2 * 6) + (val3 * 8) + (val4 * 15) + (val5 * 4) + (val6 * 4));
+                                e5.setText("" + finalVal5);
                             } else {
                                 Toast.makeText(getApplicationContext(), "No source to display....", Toast.LENGTH_SHORT).show();
                             }
