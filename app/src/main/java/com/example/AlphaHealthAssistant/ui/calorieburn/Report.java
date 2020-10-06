@@ -55,7 +55,6 @@ public class Report extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         if (snapshot.hasChildren()) {
                             e6.setText(snapshot.child("weight").getValue().toString());
-                            e7.setText(snapshot.child("weight").getValue().toString());
                         } else {
                             Toast.makeText(getApplicationContext(), "No source to display....", Toast.LENGTH_SHORT).show();
                         }
@@ -73,18 +72,20 @@ public class Report extends AppCompatActivity {
 
     public void updateWeight(View view) {
         //update weight function
-        currentWeight.setOnClickListener(new View.OnClickListener() {
+        saveCurrentWeight.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 DatabaseReference updateWeight = FirebaseDatabase.getInstance().getReference().child("Weight");
                 updateWeight.addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
+
                         if (snapshot.hasChild("Beginning")) {
                             try {
                                 weightget.setWeight(Double.parseDouble(e7.getText().toString().trim()));
 
-                                dbRep = FirebaseDatabase.getInstance().getReference().child("Weight").child("Beginner");
+                                dbRep = FirebaseDatabase.getInstance().getReference().child("Weight").child("Beginning");
+
                                 dbRep.setValue(weightget);
 
                                 Toast.makeText(getApplicationContext(), "Data updated...", Toast.LENGTH_SHORT).show();
