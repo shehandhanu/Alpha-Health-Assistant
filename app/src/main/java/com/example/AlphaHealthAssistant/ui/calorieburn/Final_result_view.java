@@ -29,11 +29,11 @@ public class Final_result_view extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_final_result_view);
 
-        buttonNext = (Button) findViewById(R.id.buttonNext);
+        buttonNext = findViewById(R.id.buttonNext);
         buttonNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent i = new Intent(getApplicationContext(), leg_beginner.class);
+                Intent i = new Intent(getApplicationContext(), CalorieBurnBeginner.class);
                 startActivity(i);
             }
         });

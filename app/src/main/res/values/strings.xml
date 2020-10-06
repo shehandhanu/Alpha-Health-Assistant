@@ -115,5 +115,6 @@
     <string name="intermediateLable">Intermediate</string>
     <string name="prolable">Pro</string>
     <string name="WeightCurrent">current weight</string>
+    <string name="CategoryButton">CAtegory</string>
 
 </resources>

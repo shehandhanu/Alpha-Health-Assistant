@@ -50,11 +50,6 @@ public class ABS_Exercise_List extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_a_b_s__exercise__list);
 
-        FirebaseDatabase database = FirebaseDatabase.getInstance();
-        DatabaseReference myRef = database.getReference("message");
-
-        myRef.setValue("Hello, World!");
-
         editText01 = findViewById(R.id.et_01);
         editText02 = findViewById(R.id.et_02);
         editText03 = findViewById(R.id.et_03);
@@ -84,6 +79,9 @@ public class ABS_Exercise_List extends AppCompatActivity {
                         abs.setExercise04(0);
 
                     } else if (TextUtils.isEmpty(editText04.getText().toString())) {
+                        abs.setExercise05(0);
+
+                    } else if (TextUtils.isEmpty(editText05.getText().toString())) {
                         abs.setExercise05(0);
 
                     } else if (TextUtils.isEmpty(editText06.getText().toString())) {
@@ -132,7 +130,7 @@ public class ABS_Exercise_List extends AppCompatActivity {
                         abs.setExercise07(Integer.parseInt(editText07.getText().toString().trim()));
 
                         //dbRef.push().setValue(abs);
-                        dbRef.child("Cast").setValue(abs);
+                        dbRef.child("abs").setValue(abs);
                         //dbRef.setValue(abs);
                         Toast.makeText(getApplicationContext(), "Data Saved Successfully", Toast.LENGTH_SHORT).show();
                         clearControls();
@@ -155,7 +153,7 @@ public class ABS_Exercise_List extends AppCompatActivity {
 
 
         //set pop-up 01
-        buttonDetails01 = (Button) findViewById(R.id.detailsButton01);
+        buttonDetails01 = findViewById(R.id.detailsButton01);
         buttonDetails01.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -163,7 +161,7 @@ public class ABS_Exercise_List extends AppCompatActivity {
             }
         });
         //set pop-up 02
-        buttonDetails02 = (Button) findViewById(R.id.detailsButton2);
+        buttonDetails02 = findViewById(R.id.detailsButton2);
         buttonDetails02.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -171,7 +169,7 @@ public class ABS_Exercise_List extends AppCompatActivity {
             }
         });
         //set pop-up 03
-        buttonDetails03 = (Button) findViewById(R.id.detailsButton3);
+        buttonDetails03 = findViewById(R.id.detailsButton3);
         buttonDetails03.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -179,7 +177,7 @@ public class ABS_Exercise_List extends AppCompatActivity {
             }
         });
         //set pop-up 04
-        buttonDetails04 = (Button) findViewById(R.id.detailsButton4);
+        buttonDetails04 = findViewById(R.id.detailsButton4);
         buttonDetails04.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

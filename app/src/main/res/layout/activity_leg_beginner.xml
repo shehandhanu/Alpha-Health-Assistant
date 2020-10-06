@@ -275,19 +275,6 @@
         app:layout_constraintStart_toStartOf="parent" />
 
     <EditText
-        android:id="@+id/finalCalView"
-        android:layout_width="150dp"
-        android:layout_height="53dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:textColor="#FFFFFF"
-        android:textSize="30sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/report_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.915"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <EditText
         android:id="@+id/leg1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

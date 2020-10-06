@@ -52,9 +52,9 @@
 
     <Button
         android:id="@+id/buttonNext"
-        android:layout_width="110dp"
-        android:layout_height="wrap_content"
-        android:text="NEXT"
+        android:layout_width="165dp"
+        android:layout_height="66dp"
+        android:text="@string/CategoryButton"
         android:textColor="#9C0303"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
