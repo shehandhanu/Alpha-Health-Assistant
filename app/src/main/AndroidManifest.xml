@@ -9,7 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ui.calorieburn.Final_result_view"></activity>
+        <activity android:name=".ui.calorieburn.Intermediate.shoulder_Intermediate_exerciseList"></activity>
+        <activity android:name=".ui.calorieburn.Intermediate.arm_Intermediate_exerciseList" />
+        <activity android:name=".ui.calorieburn.Intermediate.leg_Intermediate_exerciseList" />
+        <activity android:name=".ui.calorieburn.Intermediate.chest_Intermediate_exerciseList" />
+        <activity android:name=".ui.calorieburn.Intermediate.abs_Intermediate_exerciseList" />
+        <activity android:name=".ui.calorieburn.CalorieBurnPro" />
+        <activity
+            android:name=".ui.calorieburn.CalorieBurnIntermediate"
+            android:label="Intermediate-Exercise Category" />
+        <activity android:name=".ui.calorieburn.Final_result_view" />
         <activity android:name=".ui.calorieburn.Report" />
         <activity
             android:name=".ui.calorieburn.shoulder_beginner"

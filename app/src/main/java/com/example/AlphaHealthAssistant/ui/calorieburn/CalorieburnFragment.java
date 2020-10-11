@@ -22,6 +22,7 @@ import com.google.firebase.database.FirebaseDatabase;
 public class CalorieburnFragment extends Fragment {
 
     Button repoButton, weightSavebutton;
+    ImageButton beginnerButton, intButton, proButton;
     EditText e1;
     DatabaseReference dbRef;
     Weightget weightget;
@@ -31,16 +32,38 @@ public class CalorieburnFragment extends Fragment {
                              Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_calorieburn, container, false);
 
-        ImageButton beginnerButton = v.findViewById(R.id.Beginner_button);
+        beginnerButton = v.findViewById(R.id.Beginner_button);
+        intButton = v.findViewById(R.id.intermediateButton);
+        proButton = v.findViewById(R.id.pro_Button);
+
         repoButton = v.findViewById(R.id.repoButton);
+
         weightSavebutton = v.findViewById(R.id.weightSaveButton);
+
         e1 = v.findViewById(R.id.inputWeight);
 
+        //button to go beginner exercise list
         beginnerButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent in = new Intent(getActivity(), CalorieBurnBeginner.class);
                 startActivity(in);
+            }
+        });
+        //button to go intermediate exercise list
+        intButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent i = new Intent(getActivity(), CalorieBurnIntermediate.class);
+                startActivity(i);
+            }
+        });
+        //button to go pro exercise list
+        proButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), CalorieBurnPro.class);
+                startActivity(intent);
             }
         });
 

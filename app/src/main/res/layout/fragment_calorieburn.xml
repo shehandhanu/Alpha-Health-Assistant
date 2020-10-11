@@ -8,7 +8,7 @@
     tools:context=".ui.calorieburn.CalorieburnFragment">
 
     <ImageButton
-        android:id="@+id/imageButton6"
+        android:id="@+id/pro_Button"
         android:layout_width="296dp"
         android:layout_height="166dp"
         android:layout_marginStart="48dp"
@@ -40,7 +40,7 @@
         app:layout_constraintVertical_bias="0.131" />
 
     <ImageButton
-        android:id="@+id/imageButton4"
+        android:id="@+id/intermediateButton"
         android:layout_width="296dp"
         android:layout_height="155dp"
         android:layout_marginStart="48dp"
